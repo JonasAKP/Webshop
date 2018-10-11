@@ -11,38 +11,48 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <a type="button" class="btn btn-success" href="newProduct.html"><i class="fas fa-plus-square"></i> New Product</a></div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <table id="productsTable"
-                   class="table table-bordered
-                       table-condensed table-striped">
-                <thead>
-                <tr>
-                    <th class="small">Id</th>
-                    <th class="small">ImgPath</th>
-                    <th class="small">Name</th>
-                    <th class="small">Type</th>
-                    <th class="small">Stock</th>
-                    <th class="small">Price</th>
-                    <th class="small">Description</th>
-                    <th class="extend">
-                    </th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-            </table>
-            <div style="text-align: center" class="col-12">
-                <button type="button" class="btn btn-danger" onclick="listProducts()"><i class="fas fa-spinner"></i> Get Data</button>
+<header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="https://arizonachristian.edu/wp-content/uploads/2017/06/logo-placeholder.png" alt="" style=height:70px;">
+            </a>
+        </div>
+
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a type="button" class="btn btn-success" href="newProduct.html"><i class="fas fa-plus-square"></i> New Product</a></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table id="productsTable"
+                    class="table table-bordered
+                        table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th class="small">Id</th>
+                        <th class="small">ImgPath</th>
+                        <th class="small">Name</th>
+                        <th class="small">Type</th>
+                        <th class="small">Stock</th>
+                        <th class="small">Price</th>
+                        <th class="small">Description</th>
+                        <th class="extend">
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+                <div style="text-align: center" class="col-12">
+                    <button type="button" class="btn btn-danger" onclick="listProducts()"><i class="fas fa-spinner"></i> Get Data</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>
 <input type="hidden" id="productId" value="0" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
