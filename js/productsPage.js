@@ -102,7 +102,7 @@ function getProductById() {
 }
 
     function openDescription(id) {
-        window.open("../Webshop/description.html?id="+id);
+        location.href = "../Webshop/description.html?id="+id;
 }
 
 $('#b_back').on('click',function(e) {
