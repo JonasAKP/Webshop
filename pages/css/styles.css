@@ -23,7 +23,7 @@ header {
     display: grid;
 }
 
-#productstable {
+#productsTable {
     grid-row: 2/3;
     grid-column: span 12;
 }
@@ -43,7 +43,7 @@ main {
 #container {
 
     grid-template-columns: repeat(12,1fr) ;
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: 45px repeat(5,1fr);
     display: grid; 
 
 }
