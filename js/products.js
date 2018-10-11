@@ -30,33 +30,22 @@ function addProductRow(product) {
 }
 
 function buildProductRow(product) {
-    var ret =
-        "<tr>" +
-        "<td>" + product.id + "</td>" +
-        "<td>" + product.imgPath + "</td>" +
-        "<td>" + product.name + "</td>" +
-        "<td>" + product.type + "</td>" +
-        "<td>" + product.stock + "</td>" +
-        "<td>" + product.price + "</td>" +
-        "<td>" + product.description + "</td>" +
-        "<td>" +
-        "<button type='button' " +
-        "class='btn btn-info' " +
-        "data-id='" + product.id + "'>" +
-        "<i class='fas fa-info-circle'></i>" +
-        "</button>" +
-        "</td >" +
-        "<td>" +
-        "<button type='button' " +
-        "class='btn btn-danger'  " +
-        "data-id='" + product.id + "'>" +
-        "<i class='fas fa-minus-circle'></i>" +
-//        "productId = data-id" +
-//        "onclick="deleteProduct(productId)" +
-        "</button>" +
-        "</td >" +
-        "</tr>";
-    return ret;
+    var row = `<tr id="tr${product.id}">
+  <td>${product.id}</td>
+  <td>${product.imgPath}</td>
+  <td>${product.name}</td>
+  <td>${product.type}</td>
+  <td>${product.stock}</td>
+  <td>${product.price}</td>
+  <td>${product.description}</td>
+  <td>N/A</td>
+  <td>
+  <button onclick="deleteProduct(${product.id})">DELETE</button>
+  </td>
+  </tr>`
+    return row
+
+    //   <button onclick="editWineLoad(${Wine.id})">EDIT</button>
 }
 
 function handleException(request, message, error) {
@@ -71,9 +60,9 @@ function handleException(request, message, error) {
 }
 
 
-function deleteProduct(productId) {
+function deleteProduct(id) {
     $.ajax({
-        url: 'https://webshopappgruppe7.azurewebsites.net/api/products',
+        url: 'https://webshopappgruppe7.azurewebsites.net/api/products/' + id,
         type: 'DELETE',
         dataType: 'json',
         success: function (comments) {
