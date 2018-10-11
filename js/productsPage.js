@@ -35,11 +35,10 @@ function addProductRow(products) {
 function buildProductRow(products) {
     var ret =
         "<div id='"+ products.id +" '" +
-        " onclick='openDescription('" + products.id + "')'" +
         "<div id='section'></div>" +
         "<div class='products'>" +
         "<div id='product_img'>" +
-        "<a href='description.html'> " +
+        "<a onclick='openDescription("+products.id+")' > " +
         "<img src='"+products.imgPath+"' alt=\"\">\n" +
         "</a>" +
         "</div>" +
@@ -54,12 +53,53 @@ function buildProductRow(products) {
         "</div>" +
         "<div id='product_buy'>" +
         "<p>" +
-        "<a href='description.html'>Buy Me</a> "
+        "<a onclick='openDescription("+products.id+")'>Buy Me</a> "
     return ret;
 }
 
 
+function getProductById() {
+   // get by ID
+   $.ajax({
+       url: 'https://webshopappgruppe7.azurewebsites.net/api/products/'+ document.URL.split('=')[1],
+       type: 'GET',
+       dataType: 'json',
+       success: function (products) {
+           console.log(products);
+           $("#productSingle").empty();
+           $("#productSingle").append(
+               "<div id'= section_p'> " +
+               "<div id='p_picture'> "+
+               "<img src='"+products.imgPath+"' alt=\"\">\n" +
+               "</div>" +
+               "<div id='p_title'>" +
+               "<h2>'"+products.name+"'</h2>" +
+               "</div>" +
+               "<div id='p_price'>" +
+               "<p>Price: </p>" +
+               "</div>" +
+               "<div id='p_price2'>" +
+               "<h2>'"+products.price+"'</h2>" +
+               "</div>" +
+               "<div id='p_stock'>" +
+               "<p>Stock: </p>" +
+               "</div>" +
+               "<div id='p_stock2'>" +
+               "<p>'"+products.stock+"'</p>" +
+               "</div>" +
+               " <div id='p_info'> "+
+               "'"+products.description+"'" +
+               "</div>");
+       },
+       error: function (request, message, error) {
+           console.log(error);
+       }
+   });
+}
+
+
+
     function openDescription(id) {
-        window.open("../jonaskp/productinfo.html?id="+id);
+        window.open("../Webshop/description.html?id="+id);
 
 }

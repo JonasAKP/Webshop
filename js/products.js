@@ -45,7 +45,6 @@ function buildProductRow(product) {
   </tr>`
     return row
 
-    //   <button onclick="editWineLoad(${Wine.id})">EDIT</button>
 }
 
 function handleException(request, message, error) {
