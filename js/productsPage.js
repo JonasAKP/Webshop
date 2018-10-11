@@ -1,7 +1,11 @@
-function listProducts() {
+let page;
+page = 1;
+
+function listProducts(page) {
     // Calls the Web API with the GET function.
     $.ajax({
-        url: 'https://webshopappgruppe7.azurewebsites.net/api/products?CurrentPage=1&ItemsPerPage=4',
+        url: 'https://webshopappgruppe7.azurewebsites.net/' +
+            'api/products?CurrentPage=' + page + '&ItemsPerPage=4',
         type: 'GET',
         dataType: 'json',
         success: function (products) {
@@ -97,9 +101,15 @@ function getProductById() {
    });
 }
 
-
-
     function openDescription(id) {
         window.open("../Webshop/description.html?id="+id);
-
 }
+
+$('#b_back').on('click',function(e) {
+    e.preventDefault();
+    listProducts(--page);
+});
+$('#b_next').on('click',function(e) {
+    e.preventDefault();
+    listProducts(++page);
+});
