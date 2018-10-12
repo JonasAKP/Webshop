@@ -189,7 +189,8 @@ main {
 }
 
 #p_title {
-    grid-column: 7/9;
+    grid-column: 7/12;
+    text-align: left;
     grid-row: 1/2;
 }
 
