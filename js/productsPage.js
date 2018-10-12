@@ -38,7 +38,7 @@ function addProductRow(products) {
 
 function buildProductRow(products) {
     var ret =
-        "<div id='"+ products.id +" '" +
+        "<div id='"+ products.id +" '</div>" +
         "<div id='section'></div>" +
         "<div class='products'>" +
         "<div id='product_img'>" +
