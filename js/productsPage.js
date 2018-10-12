@@ -72,18 +72,18 @@ function getProductById() {
            console.log(products);
            $("#productSingle").empty();
            $("#productSingle").append(
-               "<div id'= section_p'> " +
-               "<div id='p_picture'> "+
+               "<div id'= section_p'> </div>" +
+               "<div id='p_picture'>  "+
                "<img src='"+products.imgPath+"' alt=\"\">\n" +
                "</div>" +
                "<div id='p_title'>" +
-               "<h2>'"+products.name+"'</h2>" +
+               "<h1>'"+products.name+"'</h1>" +
                "</div>" +
                "<div id='p_price'>" +
                "<p>Price: </p>" +
                "</div>" +
                "<div id='p_price2'>" +
-               "<h2>'"+products.price+"'</h2>" +
+               "<p>'"+products.price+"'</p>" +
                "</div>" +
                "<div id='p_stock'>" +
                "<p>Stock: </p>" +
